@@ -74,7 +74,7 @@ num_pixels = x_train.shape[1] * x_train.shape[2]
 
 # In[10
 # Initials
-filters=32
+filters=16
 neurons=32
 
 # create model
@@ -103,7 +103,7 @@ print(model.summary())
 
 # Training Parameters
 batch_size = 128
-epochs = 2
+epochs = 1
 
 history = model.fit(x_train, y_train,
           batch_size=batch_size,
@@ -113,11 +113,11 @@ history = model.fit(x_train, y_train,
 
 score = model.evaluate(x_test, y_test, verbose=0)
 print('Test loss:', score[0])
-print('Test accuracy:', score[1])
+print('Test accuracy:', score[1]*100)
 
-f= open("accuracy.txt","w+")
-f.write(str(score[1]))
-f.close()
+accuracy = open('/tf/accuracy.txt', 'w')
+accuracy.write(str(score[1]))
+accuracy.close())
 
 
 # In[ ]:
