@@ -175,7 +175,7 @@ elif (new_acc > 85 and new_acc < 90):
     accuracy.close()
 
 
-elif:
+elif():
     pass
 
 
