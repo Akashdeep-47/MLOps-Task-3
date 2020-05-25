@@ -18,10 +18,10 @@ def read_idx(filename):
 # In[2]:
 
 
-x_train = read_idx("./fashion_mnist/train-images-idx3-ubyte")
-y_train = read_idx("./fashion_mnist/train-labels-idx1-ubyte")
-x_test = read_idx("./fashion_mnist/t10k-images-idx3-ubyte")
-y_test = read_idx("./fashion_mnist/t10k-labels-idx1-ubyte")
+x_train = read_idx("tf/fashion_mnist/train-images-idx3-ubyte")
+y_train = read_idx("tf/fashion_mnist/train-labels-idx1-ubyte")
+x_test = read_idx("tf/fashion_mnist/t10k-images-idx3-ubyte")
+y_test = read_idx("tf/fashion_mnist/t10k-labels-idx1-ubyte")
 
 
 # In[3]:
@@ -116,7 +116,7 @@ print('Test loss:', score[0])
 print('Test accuracy:', score[1]*100)
 
 accuracy = open('/tf/accuracy.txt', 'w')
-accuracy.write(str(score[1]))
+accuracy.write(str(score[1]*100))
 accuracy.close()
 
 
