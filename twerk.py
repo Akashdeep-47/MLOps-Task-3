@@ -126,7 +126,7 @@ if (new_acc > 80 and new_acc <= 85):
     print('Test accuracy:', score[1]*100)
 
     accuracy = open('/tf/accuracy.txt', 'w')
-    accuracy.write(str(score[1]))
+    accuracy.write(str(score[1]*100))
     accuracy.close()
 
 
@@ -171,7 +171,7 @@ elif (new_acc > 85 and new_acc < 90):
     print('Test accuracy:', score[1]*100)
 
     accuracy = open('/tf/accuracy.txt', 'w')
-    accuracy.write(str(score[1]))
+    accuracy.write(str(score[1]*100))
     accuracy.close()
 
 
