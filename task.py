@@ -117,7 +117,7 @@ print('Test accuracy:', score[1]*100)
 
 accuracy = open('/tf/accuracy.txt', 'w')
 accuracy.write(str(score[1]))
-accuracy.close())
+accuracy.close()
 
 
 # In[ ]:
