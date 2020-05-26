@@ -85,19 +85,21 @@ if (new_acc > 75 and new_acc <= 80):
     # Initials
     num_classes = y_test.shape[1]
     num_pixels = x_train.shape[1] * x_train.shape[2]
+    filters = 32
+    neurons = 128
 
-    model.add(Conv2D(32, kernel_size=(3,3),
+    model.add(Conv2D(filters, kernel_size=(3,3),
                             activation='relu',
                        input_shape=(28, 28, 1)
                            ))
     model.add(MaxPooling2D(pool_size=(2, 2)))
 
-    model.add(Conv2D(64, kernel_size=(3,3),
+    model.add(Conv2D(filters*2, kernel_size=(3,3),
                             activation='relu'))
     model.add(MaxPooling2D(pool_size=(2, 2)))
 
     model.add(Flatten())
-    model.add(Dense(128, activation='relu')
+    model.add(Dense(neurons, activation='relu')
 
     model.add(Dense(num_classes, activation='softmax'))
 
@@ -135,15 +137,17 @@ elif (new_acc > 80 and new_acc < 85):
     # Initials
     num_classes = y_test.shape[1]
     num_pixels = x_train.shape[1] * x_train.shape[2]
+    filters = 64
+    neurons = 128
 
-    model.add(Conv2D(64, kernel_size=(3,3),
+    model.add(Conv2D(filters, kernel_size=(3,3),
                             activation='relu',
                        input_shape=(28, 28, 1)
                            ))
     model.add(MaxPooling2D(pool_size=(2, 2)))
 
     model.add(Flatten())
-    model.add(Dense(128, activation='relu'))
+    model.add(Dense(neurons, activation='relu'))
 
     model.add(Dense(num_classes, activation='softmax'))
 
