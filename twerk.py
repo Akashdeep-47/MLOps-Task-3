@@ -79,26 +79,23 @@ accuracy_txt = open('/tf/accuracy.txt', 'r')
 new_acc = float(str(accuracy_txt.read()))
 
 # create model
-if (new_acc > 80 and new_acc <= 85):
+if (new_acc > 75 and new_acc <= 80):
     model = Sequential()
 
     # Initials
 
-    model.add(Conv2D(64, kernel_size=(2,2),
+    model.add(Conv2D(32, kernel_size=(3,3),
                             activation='relu',
                        input_shape=(28, 28, 1)
                            ))
     model.add(MaxPooling2D(pool_size=(2, 2)))
 
-    model.add(Conv2D(32, kernel_size=(2,2),
-                            activation='relu',
-                       input_shape=(28, 28, 1)
-                           ))
+    model.add(Conv2D(64, kernel_size=(3,3),
+                            activation='relu'))
     model.add(MaxPooling2D(pool_size=(2, 2)))
 
     model.add(Flatten())
-    model.add(Dense(32, activation='relu'))
-    model.add(Dense(64, activation='relu'))
+    model.add(Dense(128, activation='relu')
 
     model.add(Dense(num_classes, activation='softmax'))
 
@@ -113,7 +110,7 @@ if (new_acc > 80 and new_acc <= 85):
 
     # Training Parameters
     batch_size = 128
-    epochs = 3
+    epochs = 5
 
     history = model.fit(x_train, y_train,
               batch_size=batch_size,
@@ -130,20 +127,19 @@ if (new_acc > 80 and new_acc <= 85):
     accuracy.close()
 
 
-elif (new_acc > 85 and new_acc < 90):
+elif (new_acc > 80 and new_acc < 85):
     model = Sequential()
 
     # Initials
 
-    model.add(Conv2D(64, kernel_size=(2,2),
+    model.add(Conv2D(64, kernel_size=(3,3),
                             activation='relu',
                        input_shape=(28, 28, 1)
                            ))
     model.add(MaxPooling2D(pool_size=(2, 2)))
 
     model.add(Flatten())
-    model.add(Dense(32, activation='relu'))
-    model.add(Dense(64, activation='relu'))
+    model.add(Dense(128, activation='relu'))
 
     model.add(Dense(num_classes, activation='softmax'))
 
@@ -158,7 +154,7 @@ elif (new_acc > 85 and new_acc < 90):
 
     # Training Parameters
     batch_size = 128
-    epochs = 5
+    epochs = 8
 
     history = model.fit(x_train, y_train,
               batch_size=batch_size,
