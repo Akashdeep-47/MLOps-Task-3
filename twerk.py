@@ -83,6 +83,8 @@ if (new_acc > 75 and new_acc <= 80):
     model = Sequential()
 
     # Initials
+    num_classes = y_test.shape[1]
+    num_pixels = x_train.shape[1] * x_train.shape[2]
 
     model.add(Conv2D(32, kernel_size=(3,3),
                             activation='relu',
@@ -131,6 +133,8 @@ elif (new_acc > 80 and new_acc < 85):
     model = Sequential()
 
     # Initials
+    num_classes = y_test.shape[1]
+    num_pixels = x_train.shape[1] * x_train.shape[2]
 
     model.add(Conv2D(64, kernel_size=(3,3),
                             activation='relu',
