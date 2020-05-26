@@ -73,21 +73,18 @@ num_pixels = x_train.shape[1] * x_train.shape[2]
 
 
 # In[10
-# Initials
-filters=16
-neurons=32
 
 # create model
 model = Sequential()
 
-model.add(Conv2D(filters, kernel_size=(2,2),
+model.add(Conv2D(16, kernel_size=(2,2),
                         activation='relu',
                    input_shape=(28, 28, 1)
                        ))
 model.add(MaxPooling2D(pool_size=(2, 2)))
 
 model.add(Flatten())
-model.add(Dense(neurons, activation='relu'))
+model.add(Dense(32, activation='relu'))
 
 model.add(Dense(num_classes, activation='softmax'))
 
